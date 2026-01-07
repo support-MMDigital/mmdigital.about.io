@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MM Digital | Unity Asset Store Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+            background: #f8f8f8;
+        }
+        header {
+            margin-bottom: 40px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.5;
+            max-width: 900px;
+        }
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .asset-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            transition: transform .15s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+        .asset-card:hover {
+            transform: scale(1.02);
+        }
+        .asset-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .asset-card-details {
+            padding: 15px;
+        }
+        .asset-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .asset-info {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>MM Digital</h1>
+    <p>
+        Welcome to the official MM Digital Unity Asset Store portfolio.
+        I develop high-quality Unity tools, systems, and visual assets designed to help game developers
+        accelerate production and achieve professional results. Below you can explore all currently published assets.
+    </p>
+</header>
+
+<h2>Available Assets</h2>
+
+<div class="asset-grid">
+    
+    <!-- ASSET CARD EXAMPLE 1 -->
+    <a href="LINK_TO_ASSET_STORE_PAGE" class="asset-card" target="_blank">
+        <img src="PREVIEW_IMAGE_URL" alt="Asset Preview">
+        <div class="asset-card-details">
+            <div class="asset-title">Asset Title Example</div>
+            <div class="asset-info">Short description or feature list summary.</div>
+        </div>
+    </a>
+
+    <!-- ASSET CARD EXAMPLE 2 -->
+    <a href="LINK_TO_ASSET_STORE_PAGE" class="asset-card" target="_blank">
+        <img src="PREVIEW_IMAGE_URL" alt="Asset Preview">
+        <div class="asset-card-details">
+            <div class="asset-title">Another Asset Name</div>
+            <div class="asset-info">Useful info such as category, version, etc.</div>
+        </div>
+    </a>
+
+    <!-- Add more cards as needed -->
+
+</div>
+
+</body>
+</html>
