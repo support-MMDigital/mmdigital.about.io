@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ============================================
+         PAGE TITLE & FONTS
+         ============================================
+         - Change the title text in the <title> tag above
+         - To change fonts, replace the Google Fonts URLs in the <link> tags
+         - Current fonts: Syne (main), Space Grotesk (backup)
+         - Find more fonts at: https://fonts.google.com/
+    -->
     <title>MMDigital | Unity Development Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+           COLOR SYSTEM / CSS VARIABLES
+           ============================================
+           This is the main color palette for the entire site.
+           Change these values to customize the color scheme globally.
+           
+           HOW TO CHANGE COLORS:
+           - Replace the hex codes (#000000) with your desired colors
+           - Use online color pickers or design tools to find hex codes
+           - All colors will update automatically across the site
+           
+           COLOR VARIABLES:
+           - --bg-primary: Main background color (currently black)
+           - --bg-secondary: Secondary background for alternating sections
+           - --bg-card: Background for cards/containers
+           - --text-primary: Main text color (light gray)
+           - --text-secondary: Secondary/muted text color
+           - --accent: Primary accent color (blue) - used for links, highlights
+           - --accent-hover: Accent color on hover
+           - --gradient-1/2/3: Gradient colors for various elements
+           - --gradient-hero: Hero section background gradient
+        */
         :root {
             --bg-primary: #000000;
             --bg-secondary: #0a0a0a;
@@ -31,6 +61,13 @@
             scroll-behavior: smooth;
         }
 
+        /* ============================================
+           BODY & GLOBAL STYLES
+           ============================================
+           - font-family: Change to your preferred font (must match Google Fonts link)
+           - background: Uses --bg-primary variable
+           - color: Uses --text-primary variable
+        */
         body {
             font-family: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
@@ -39,6 +76,13 @@
             line-height: 1.6;
         }
 
+        /* ============================================
+           NOISE OVERLAY EFFECT
+           ============================================
+           Creates a subtle texture overlay on the entire page.
+           - opacity: Adjust 0.03 to change texture visibility (0 = invisible, 1 = fully visible)
+           - To remove: Delete the <div class="noise-overlay"></div> in the HTML body
+        */
         .noise-overlay {
             position: fixed;
             top: 0;
@@ -51,6 +95,17 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
+        /* ============================================
+           NAVIGATION BAR MODULE
+           ============================================
+           Fixed navigation bar at the top of the page.
+           
+           HOW TO CUSTOMIZE:
+           - padding: Change "20px 60px" to adjust spacing (vertical horizontal)
+           - background: Change rgba(0, 0, 0, 0.8) to adjust transparency/color
+              Format: rgba(red, green, blue, opacity) where opacity is 0-1
+           - backdrop-filter: Controls blur effect (20px = blur amount)
+        */
         nav {
             position: fixed;
             top: 0;
@@ -66,6 +121,14 @@
             transition: all 0.3s ease;
         }
 
+        /* ============================================
+           LOGO STYLING
+           ============================================
+           - font-size: Change "1.5rem" to adjust logo size
+           - font-weight: Change "800" for thickness (100-900)
+           - background: Gradient colors for logo text
+              Change "#fff" and "#999" to your brand colors
+        */
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
@@ -76,6 +139,14 @@
             background-clip: text;
         }
 
+        /* ============================================
+           NAVIGATION LINKS
+           ============================================
+           - gap: Space between nav items (currently 40px)
+           - font-size: Link text size
+           - color: Uses --text-secondary variable
+           - To change link text: Edit the <a> tags in the HTML nav section
+        */
         .nav-links {
             display: flex;
             gap: 40px;
@@ -95,6 +166,22 @@
             color: var(--text-primary);
         }
 
+        /* ============================================
+           HERO SECTION MODULE
+           ============================================
+           The main landing section with large title and call-to-action.
+           
+           HOW TO CUSTOMIZE:
+           - min-height: Change "100vh" to adjust section height (vh = viewport height)
+           - padding: Adjust "120px 20px" for spacing
+           - background: Uses --gradient-hero variable (defined in :root)
+           
+           TEXT CONTENT:
+           - Badge text: Edit <span>Unity Development Studio</span> in HTML
+           - Main heading: Edit <h1> content in HTML
+           - Description: Edit <p> tag content in HTML
+           - Button text: Edit "Explore Projects" and "Get in Touch" in HTML
+        */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -108,6 +195,18 @@
             overflow: hidden;
         }
 
+        /* ============================================
+           HERO BACKGROUND GLOW EFFECT
+           ============================================
+           Creates an animated pulsing glow behind the hero content.
+           
+           HOW TO CUSTOMIZE:
+           - width/height: Change "800px" to adjust glow size
+           - background: Change rgba(41, 151, 255, 0.15) to change glow color
+              Format: rgba(red, green, blue, opacity)
+           - animation: "8s" = animation speed (lower = faster)
+           - To remove: Delete this entire .hero::before block
+        */
         .hero::before {
             content: '';
             position: absolute;
@@ -146,6 +245,16 @@
             opacity: 0;
         }
 
+        /* ============================================
+           HERO BADGE BLINKING DOT
+           ============================================
+           The green dot that blinks in the hero badge.
+           
+           HOW TO CUSTOMIZE:
+           - background: Change "#00ff88" to any color (green dot)
+           - width/height: Change "8px" to adjust dot size
+           - animation: "2s" = blink speed (lower = faster)
+        */
         .hero-badge::before {
             content: '';
             width: 8px;
@@ -170,6 +279,16 @@
             opacity: 0;
         }
 
+        /* ============================================
+           HERO TITLE GRADIENT TEXT
+           ============================================
+           The "digital worlds" text uses a gradient effect.
+           
+           HOW TO CHANGE COLORS:
+           - Replace #fff, #667eea, #764ba2 with your gradient colors
+           - Format: linear-gradient(angle, color1 stop%, color2 stop%, color3 stop%)
+           - 135deg = gradient angle (0deg = left to right, 90deg = top to bottom)
+        */
         .hero h1 span {
             display: block;
             background: linear-gradient(135deg, #fff 0%, #667eea 50%, #764ba2 100%);
@@ -219,6 +338,19 @@
             font-family: inherit;
         }
 
+        /* ============================================
+           BUTTON STYLES
+           ============================================
+           Primary and secondary button styles used throughout the site.
+           
+           HOW TO CUSTOMIZE:
+           - .btn-primary: Main action button (white background)
+              Change background/color to use custom colors
+           - .btn-secondary: Secondary button (outlined style)
+              Change border color in "rgba(255, 255, 255, 0.3)"
+           - padding: Change "16px 36px" to adjust button size
+           - border-radius: Change "100px" for rounded corners (100px = fully rounded)
+        */
         .btn-primary {
             background: var(--text-primary);
             color: var(--bg-primary);
@@ -272,11 +404,26 @@
             50% { transform: scaleY(0.5); }
         }
 
+        /* ============================================
+           SECTION SPACING
+           ============================================
+           Default padding for all sections.
+           - padding: "150px 60px" = top/bottom 150px, left/right 60px
+           - Adjust these values to change spacing between sections
+        */
         section {
             padding: 150px 60px;
             position: relative;
         }
 
+        /* ============================================
+           SECTION HEADERS
+           ============================================
+           Styling for section titles, tags, and subtitles.
+           - .section-tag: Small uppercase label (e.g., "Portfolio", "Services")
+           - .section-title: Main heading for each section
+           - .section-subtitle: Description text below title
+        */
         .section-header {
             text-align: center;
             margin-bottom: 80px;
@@ -305,6 +452,20 @@
             margin: 0 auto;
         }
 
+        /* ============================================
+           ABOUT SECTION MODULE
+           ============================================
+           Two-column layout with image on left, content on right.
+           
+           HOW TO CUSTOMIZE:
+           - background: Uses --bg-secondary variable
+           - Layout: Changes to single column on mobile automatically
+           
+           TEXT CONTENT:
+           - Edit the <h2>, <p> tags in the .about-content div in HTML
+           - Edit stats numbers: Change "50+", "10K+", "4.9" in HTML
+           - Edit stat labels: Change "Published Assets", etc. in HTML
+        */
         .about {
             background: var(--bg-secondary);
         }
@@ -326,6 +487,19 @@
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
 
+        /* ============================================
+           ABOUT SECTION IMAGE
+           ============================================
+           Background image for the about section visual.
+           
+           HOW TO CHANGE IMAGE:
+           - Replace the URL in background: url('...') with your image URL
+           - Use local images: url('images/your-image.jpg')
+           - Use online images: url('https://your-image-url.com/image.jpg')
+           - opacity: Change "0.6" to adjust image visibility (0-1)
+           - filter: grayscale(30%) - change percentage or remove for full color
+           - To remove image: Delete this entire .about-visual::before block
+        */
         .about-visual::before {
             content: '';
             position: absolute;
@@ -389,6 +563,16 @@
             text-align: left;
         }
 
+        /* ============================================
+           STATISTICS NUMBERS
+           ============================================
+           Large gradient numbers in the about section.
+           
+           HOW TO CUSTOMIZE:
+           - font-size: Change "3rem" to adjust number size
+           - background: Change gradient colors (#fff, #667eea)
+              Format: linear-gradient(angle, color1, color2)
+        */
         .stat-number {
             font-size: 3rem;
             font-weight: 800;
@@ -404,6 +588,22 @@
             margin-top: 5px;
         }
 
+        /* ============================================
+           PROJECTS SECTION MODULE
+           ============================================
+           Grid layout displaying project cards with images and descriptions.
+           
+           HOW TO CUSTOMIZE:
+           - background: Uses --bg-primary variable
+           - Grid layout: "repeat(2, 1fr)" = 2 columns, equal width
+              Change to "repeat(3, 1fr)" for 3 columns
+           - gap: "40px" = space between cards
+           
+           ADDING/REMOVING PROJECTS:
+           - Copy a <div class="project-card"> block in HTML
+           - Remove "featured" class for regular-sized cards
+           - Add "featured" class to make a card span 2 columns
+        */
         .projects {
             background: var(--bg-primary);
         }
@@ -423,7 +623,6 @@
             background: var(--bg-card);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            group: project;
         }
 
         .project-card:hover {
@@ -434,6 +633,19 @@
             grid-column: span 2;
         }
 
+        /* ============================================
+           PROJECT CARD IMAGES
+           ============================================
+           Images displayed on project cards.
+           
+           HOW TO CHANGE IMAGES:
+           - In HTML, find <img src="..."> tags inside .project-card
+           - Replace the URL with your image URL
+           - Use local: src="images/project1.jpg"
+           - Use online: src="https://your-image-url.com/image.jpg"
+           - aspect-ratio: "16/10" = image proportions (change to "1/1" for square)
+           - object-fit: "cover" = fills container, "contain" = fits inside
+        */
         .project-image {
             width: 100%;
             aspect-ratio: 16/10;
@@ -455,6 +667,16 @@
             padding: 50px;
         }
 
+        /* ============================================
+           PROJECT TAGS
+           ============================================
+           Small category labels on project cards (e.g., "Featured", "UI System").
+           
+           HOW TO CUSTOMIZE:
+           - color: Uses --accent variable (change in :root)
+           - background: Change rgba(255, 255, 255, 0.1) for tag background
+           - To change tag text: Edit <span class="project-tag"> in HTML
+        */
         .project-tag {
             display: inline-block;
             padding: 6px 16px;
@@ -513,6 +735,23 @@
             transform: translate(3px, -3px);
         }
 
+        /* ============================================
+           SERVICES SECTION MODULE
+           ============================================
+           Three-column grid displaying service cards.
+           
+           HOW TO CUSTOMIZE:
+           - background: Uses --bg-secondary variable
+           - Grid: "repeat(3, 1fr)" = 3 equal columns
+              Change to "repeat(2, 1fr)" for 2 columns
+           - gap: "30px" = space between cards
+           
+           ADDING/REMOVING SERVICES:
+           - Copy a <div class="service-card"> block in HTML
+           - Edit icon: Change emoji (🎮, ⚡, 🚀) or use SVG/images
+           - Edit title: Change <h3 class="service-title"> text
+           - Edit description: Change <p class="service-desc"> text
+        */
         .services {
             background: var(--bg-secondary);
         }
@@ -535,6 +774,20 @@
             overflow: hidden;
         }
 
+        /* ============================================
+           SERVICE CARD TOP BORDER
+           ============================================
+           Animated colored border that appears on hover.
+           
+           HOW TO CUSTOMIZE:
+           - height: Change "3px" to adjust border thickness
+           - background: Each card uses different gradient
+              Card 1: --gradient-1
+              Card 2: --gradient-2
+              Card 3: --gradient-3
+           - To change colors: Edit gradient variables in :root
+           - To use same color for all: Remove nth-child rules
+        */
         .service-card::before {
             content: '';
             position: absolute;
@@ -561,6 +814,18 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
+        /* ============================================
+           SERVICE ICONS
+           ============================================
+           Icon containers with gradient backgrounds.
+           
+           HOW TO CUSTOMIZE:
+           - width/height: Change "70px" to adjust icon size
+           - font-size: Change "2rem" to adjust emoji/text size
+           - background: Each icon has different gradient background
+              Change rgba values to customize colors
+           - To use images instead: Replace emoji with <img> tag in HTML
+        */
         .service-icon {
             width: 70px;
             height: 70px;
@@ -589,6 +854,23 @@
             line-height: 1.7;
         }
 
+        /* ============================================
+           TESTIMONIALS SECTION MODULE
+           ============================================
+           Horizontal scrolling carousel of client testimonials.
+           
+           HOW TO CUSTOMIZE:
+           - background: Uses --bg-primary variable
+           - animation: "30s" = scroll speed (lower = faster)
+           - gap: "30px" = space between testimonial cards
+           
+           ADDING/REMOVING TESTIMONIALS:
+           - Copy a <div class="testimonial-card"> block in HTML
+           - Edit quote: Change <p class="testimonial-text"> text
+           - Edit author name: Change <h4> text
+           - Edit author title: Change <p> text inside .author-info
+           - Note: Cards are duplicated for seamless scrolling
+        */
         .testimonials {
             background: var(--bg-primary);
             overflow: hidden;
@@ -627,6 +909,18 @@
             gap: 15px;
         }
 
+        /* ============================================
+           TESTIMONIAL AVATAR
+           ============================================
+           Circular avatar placeholder for testimonial authors.
+           
+           HOW TO CUSTOMIZE:
+           - width/height: Change "50px" to adjust avatar size
+           - background: Uses --gradient-1 variable
+           - To use actual images: Replace <div class="author-avatar"> with:
+             <img src="avatar.jpg" class="author-avatar" alt="Author">
+           - Add CSS: .author-avatar { background: none; }
+        */
         .author-avatar {
             width: 50px;
             height: 50px;
@@ -644,6 +938,21 @@
             font-size: 0.875rem;
         }
 
+        /* ============================================
+           CONTACT SECTION MODULE
+           ============================================
+           Call-to-action section with email contact.
+           
+           HOW TO CUSTOMIZE:
+           - background: Uses --gradient-hero variable
+           - Contact glow: .contact::before creates background glow
+              Change rgba(102, 126, 234, 0.15) to adjust glow color
+           
+           TEXT CONTENT:
+           - Heading: Edit <h2> text in HTML
+           - Description: Edit <p> text in HTML
+           - Email: Edit "hello@mmdigital.de" in HTML (both text and href)
+        */
         .contact {
             background: var(--gradient-hero);
             text-align: center;
@@ -701,6 +1010,21 @@
             transform: scale(1.02);
         }
 
+        /* ============================================
+           FOOTER MODULE
+           ============================================
+           Site footer with logo, links, and copyright.
+           
+           HOW TO CUSTOMIZE:
+           - padding: Change "60px" for spacing
+           - background: Uses --bg-primary variable
+           - border-top: Top border color (rgba values)
+           
+           TEXT CONTENT:
+           - Logo: Edit "MMDigital" in .footer-logo div
+           - Links: Edit <a> tags in .footer-links (add href URLs)
+           - Copyright: Edit "© 2025 MMDigital..." text
+        */
         footer {
             padding: 60px;
             background: var(--bg-primary);
@@ -774,8 +1098,24 @@
     </style>
 </head>
 <body>
+    <!-- ============================================
+         NOISE OVERLAY
+         ============================================
+         Subtle texture overlay - can be removed if not needed
+    -->
     <div class="noise-overlay"></div>
 
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================
+         Fixed navigation at top of page.
+         
+         HOW TO CUSTOMIZE:
+         - Logo text: Change "MMDigital" in .logo div
+         - Nav links: Edit <a> tags below
+         - Add/remove links: Copy/delete <li> items
+         - Link destinations: Change href="#section-id"
+    -->
     <nav>
         <div class="logo">MMDigital</div>
         <ul class="nav-links">
@@ -786,6 +1126,18 @@
         </ul>
     </nav>
 
+    <!-- ============================================
+         HERO SECTION
+         ============================================
+         Main landing section with large title and CTAs.
+         
+         HOW TO CUSTOMIZE TEXT:
+         - Badge: Change "Unity Development Studio"
+         - Main heading: Change "We create" and "digital worlds."
+         - Description: Change paragraph text
+         - Button text: Change "Explore Projects" and "Get in Touch"
+         - Button links: Change href="#projects" and href="#contact"
+    -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">
@@ -807,6 +1159,18 @@
         </div>
     </section>
 
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================
+         Two-column layout: image left, content right.
+         
+         HOW TO CUSTOMIZE:
+         - Floating badge: Change "5+ Years Experience" and description
+         - Heading: Change <h2> text
+         - Paragraphs: Edit <p> tags
+         - Stats: Change numbers (50+, 10K+, 4.9) and labels
+         - Image: Change in CSS .about-visual::before (see CSS comments)
+    -->
     <section class="about" id="about">
         <div class="about-grid">
             <div class="about-visual">
@@ -837,6 +1201,21 @@
         </div>
     </section>
 
+    <!-- ============================================
+         PROJECTS SECTION
+         ============================================
+         Grid of project cards with images and descriptions.
+         
+         HOW TO CUSTOMIZE:
+         - Section header: Change "Portfolio", "Featured Projects", subtitle
+         - Project cards: Each .project-card contains:
+           * Image: <img src="..."> - replace URL
+           * Tag: <span class="project-tag"> - category label
+           * Title: <h3 class="project-title"> - project name
+           * Description: <p class="project-desc"> - project details
+         - Add "featured" class to make card span 2 columns
+         - Remove "featured" for regular-sized cards
+    -->
     <section class="projects" id="projects">
         <div class="section-header reveal">
             <div class="section-tag">Portfolio</div>
@@ -912,6 +1291,19 @@
         </div>
     </section>
 
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================
+         Three-column grid of service cards.
+         
+         HOW TO CUSTOMIZE:
+         - Section header: Change "Services", "What We Offer", subtitle
+         - Service cards: Each .service-card contains:
+           * Icon: <div class="service-icon">🎮</div> - change emoji or use image
+           * Title: <h3 class="service-title"> - service name
+           * Description: <p class="service-desc"> - service details
+         - Add/remove cards: Copy/delete .service-card divs
+    -->
     <section class="services" id="services">
         <div class="section-header reveal">
             <div class="section-tag">Services</div>
@@ -937,6 +1329,21 @@
         </div>
     </section>
 
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================
+         Horizontal scrolling carousel of client testimonials.
+         
+         HOW TO CUSTOMIZE:
+         - Section header: Change "Testimonials", "What Clients Say"
+         - Testimonial cards: Each .testimonial-card contains:
+           * Quote: <p class="testimonial-text"> - testimonial text
+           * Author name: <h4> - client name
+           * Author title: <p> - client role/company
+         - Note: Cards are duplicated for seamless scrolling
+           Make sure to duplicate any new testimonials you add
+         - Avatar: Currently uses gradient, see CSS to add images
+    -->
     <section class="testimonials">
         <div class="section-header reveal">
             <div class="section-tag">Testimonials</div>
@@ -1006,6 +1413,18 @@
         </div>
     </section>
 
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================
+         Call-to-action section with email contact.
+         
+         HOW TO CUSTOMIZE:
+         - Heading: Change <h2> text
+         - Description: Change <p> text
+         - Email: Change "hello@mmdigital.de" in both:
+           * The visible text: <span>hello@mmdigital.de</span>
+           * The mailto link: href="mailto:hello@mmdigital.de"
+    -->
     <section class="contact" id="contact">
         <div class="contact-content reveal">
             <h2>Let's create something amazing.</h2>
@@ -1019,6 +1438,18 @@
         </div>
     </section>
 
+    <!-- ============================================
+         FOOTER
+         ============================================
+         Site footer with logo, social links, and copyright.
+         
+         HOW TO CUSTOMIZE:
+         - Logo: Change "MMDigital" text
+         - Links: Edit <a> tags, add href URLs (replace #)
+           Examples: href="https://github.com/yourusername"
+         - Add/remove links: Copy/delete <a> tags
+         - Copyright: Change "© 2025 MMDigital..." text
+    -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">MMDigital</div>
@@ -1032,6 +1463,24 @@
         </div>
     </footer>
 
+    <!-- ============================================
+         JAVASCRIPT FUNCTIONALITY
+         ============================================
+         Handles scroll animations, smooth scrolling, and nav behavior.
+         
+         REVEAL ANIMATION:
+         - Elements with class "reveal" fade in when scrolled into view
+         - revealPoint: "150" = pixels from bottom of screen to trigger
+           Lower = triggers earlier, Higher = triggers later
+         
+         SMOOTH SCROLLING:
+         - Automatically handles smooth scrolling for anchor links (#section)
+         
+         NAVIGATION HIDE/SHOW:
+         - Navbar hides when scrolling down, shows when scrolling up
+         - Threshold: "100" = pixels scrolled before hiding starts
+           Change to adjust when nav hides
+    -->
     <script>
         const reveals = document.querySelectorAll('.reveal');
         
@@ -1039,7 +1488,7 @@
             reveals.forEach(el => {
                 const windowHeight = window.innerHeight;
                 const elementTop = el.getBoundingClientRect().top;
-                const revealPoint = 150;
+                const revealPoint = 150; // Adjust this value to change when animations trigger
                 
                 if (elementTop < windowHeight - revealPoint) {
                     el.classList.add('active');
@@ -1050,6 +1499,7 @@
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
 
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1060,12 +1510,13 @@
             });
         });
 
+        // Navigation hide/show on scroll
         let lastScroll = 0;
         const nav = document.querySelector('nav');
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScroll && currentScroll > 100) {
+            if (currentScroll > lastScroll && currentScroll > 100) { // 100 = threshold for hiding
                 nav.style.transform = 'translateY(-100%)';
             } else {
                 nav.style.transform = 'translateY(0)';
@@ -1075,5 +1526,3 @@
     </script>
 </body>
 </html>
-mmdigital-portfolio (1).html
-36 kB
