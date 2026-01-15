@@ -11,7 +11,7 @@
          - Current fonts: Syne (main), Space Grotesk (backup)
          - Find more fonts at: https://fonts.google.com/
     -->
-    <title>MMDigital | Unity Development Studio</title>
+    <title>MMDigital | Unity Software Development</title>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -760,6 +760,9 @@
         }
 
         .project-card {
+            color: inherit;
+            text-decoration: none; 
+            display: block;       
             position: relative;
             border-radius: 30px;
             overflow: hidden;
@@ -1274,7 +1277,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
+            <!-- <li><a href="#services">Services</a></li>-->
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -1297,7 +1300,7 @@
                 We create
                 <span>digital worlds.</span>
             </h1>
-            <p>Premium Unity Assets & custom game development for studios and indie developers worldwide.</p>
+            <p>Unity Assets & custom game development for studios and indie developers worldwide.</p>
             <div class="cta-group">
                 <a href="#projects" class="btn btn-primary">Explore Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -1321,15 +1324,15 @@
         <div class="about-grid">
             <div class="about-visual">
                 <div class="floating-badge">
-                    <h4>5+ Years Experience</h4>
-                    <p>Professional Unity development since 2019</p>
+                    <h4>3+ Years Experience</h4>
+                    <p>Professional Unity development since 2022</p>
                 </div>
             </div>
             <div class="about-content reveal">
                 <h2>We combine creativity with technical excellence</h2>
-                <p>MMDigital is a specialized studio for Unity development. We create high-quality assets, complex systems, and complete game solutions.</p>
-                <p>Our focus is on performance, usability, and modern design. Every project is executed with the highest care and attention to detail.</p>
-                <div class="stats-row">
+                <p>MMDigital specialized in the development for Unity tools.</p>
+                <p>The focus is on performance, usability, and modern design.</p>
+               <!-- <div class="stats-row">
                     <div class="stat">
                         <div class="stat-number">50+</div>
                         <div class="stat-label">Published Assets</div>
@@ -1342,7 +1345,7 @@
                         <div class="stat-number">4.9</div>
                         <div class="stat-label">Average Rating</div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
@@ -1369,20 +1372,21 @@
             <p class="section-subtitle">A selection of our best work from recent years.</p>
         </div>
         <div class="projects-grid">
-            <div class="project-card featured reveal">
+            <a href="https://assetstore.unity.com/packages/slug/351144" class="project-card featured reveal">
                 <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=1600" alt="Project" class="project-image">
                 <div class="project-overlay">
-                    <span class="project-tag">Featured</span>
-                    <h3 class="project-title">Advanced Inventory System</h3>
-                    <p class="project-desc">A complete inventory system with drag & drop, stacking, equipment slots, and crafting integration.</p>
+                    <span class="project-tag">Framework</span>
+                    <h3 class="project-title">DOTS Framework - Entity Template & LinkedObject System</h3>
+                    <p class="project-desc">A template-based abstraction layer for Unity DOTS. Simplify entity management, bridge GameObjects with LinkedObjects, and automate high-performance Burst-compiled systems with zero boilerplate.</p>
                 </div>
                 <div class="project-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
                 </div>
-            </div>
-            <div class="project-card reveal">
+            </a>
+        </div>
+            <!--<div class="project-card reveal">
                 <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800" alt="Project" class="project-image">
                 <div class="project-overlay">
                     <span class="project-tag">UI System</span>
@@ -1433,7 +1437,7 @@
                         <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
                 </div>
-            </div>
+            </div>-->
         </div>
     </section>
 
@@ -1450,7 +1454,7 @@
            * Description: <p class="service-desc"> - service details
          - Add/remove cards: Copy/delete .service-card divs
     -->
-    <section class="services" id="services">
+    <!--<section class="services" id="services">
         <div class="section-header reveal">
             <div class="section-tag">Services</div>
             <h2 class="section-title">What We Offer</h2>
@@ -1473,7 +1477,7 @@
                 <p class="service-desc">Professional consulting for architecture, performance optimization, and Unity best practices.</p>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- ============================================
          TESTIMONIALS SECTION
@@ -1490,7 +1494,7 @@
            Make sure to duplicate any new testimonials you add
          - Avatar: Currently uses gradient, see CSS to add images
     -->
-    <section class="testimonials">
+    <!--<section class="testimonials">
         <div class="section-header reveal">
             <div class="section-tag">Testimonials</div>
             <h2 class="section-title">What Clients Say</h2>
@@ -1557,7 +1561,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- ============================================
          CONTACT SECTION
@@ -1573,8 +1577,8 @@
     -->
     <section class="contact" id="contact">
         <div class="contact-content reveal">
-            <h2>Let's create something amazing.</h2>
-            <p>Ready for your next project? Contact us for a free consultation.</p>
+            <h2>Any Questions?</h2>
+            <p>Do not hesitate to contact us for feedback, issues or questions</p>
             <a href="mailto:supprt.mmdigital@gmail.com" class="contact-email">
                 <span>supprt.mmdigital@gmail.com</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
